@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Vault</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-lock"></i>
+                <h1>Password <span>Vault</span></h1>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Buscar usuario...">
+                <button id="searchBtn"><i class="fas fa-search"></i> Buscar</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="password-table-container">
+                <table id="passwordTable">
+                    <thead>
+                        <tr>
+                            <th><i class="fas fa-user"></i> Usuario</th>
+                            <th><i class="fas fa-key"></i> Contraseña</th>
+                            <th><i class="fas fa-user"></i> Usuario</th>
+                            <th><i class="fas fa-key"></i> Contraseña</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Las filas se generarán con JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <div id="notification" class="notification">
+        <i class="fas fa-check-circle"></i> ¡Copiado al portapapeles!
+    </div>
+
+    <script src="assets/script.js"></script>
+</body>
+</html>
