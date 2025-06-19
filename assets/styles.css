@@ -350,6 +350,32 @@ tr:hover {
         width: 100%;
         margin-top: 5px;
     }
+    /* Estilos para el candado personalizado */
+.custom-lock-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-right: 1rem;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(108, 92, 231, 0.3));
+}
+
+.custom-lock-icon:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 4px 8px rgba(108, 92, 231, 0.4));
+    color: var(--secondary-color);
+}
+
+/* Animación de "bloqueo" */
+@keyframes lockShake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+.container:hover .custom-lock-icon {
+    animation: lockShake 0.5s ease;
+}
 }
 
 @media (max-width: 480px) {
