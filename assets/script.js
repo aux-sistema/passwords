@@ -44,7 +44,10 @@ document.addEventListener('DOMContentLoaded', function() {
         { user: "Claudia_Parrilla", password: "Cla456790$" },
         { user: "Ricardo_Ayala", password: "Aya$57920" },
         { user: "Mariana_Ayala", password: "Mar3800$$" },
-        { user: "Luis_Ayala", password: "Ayala563800$$" }
+        { user: "Nora", password: "N0r4$01" },
+        { user: "Karinaa", password: "K4r1n4$" },
+        { user: "Paulina", password: "P4ul1n4$" },
+        { user: "Manuel", password: "M4nu3l$0" },
     ];
 
     const tableBody = document.querySelector('#passwordTable tbody');
