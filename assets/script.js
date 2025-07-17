@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Datos de usuarios y contraseñas
     const passwordData = [
         { user: "Antonieta", password: "gama01e$$+" },
@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { user: "Claudia_Parrilla", password: "Cla456790$" },
         { user: "Ricardo_Ayala", password: "Aya$57920" },
         { user: "Mariana_Ayala", password: "Mar3800$$" },
+        { user: "Luis_Ayala", password: "Ayala563800$$" },
         { user: "Nora", password: "N0r4$01" },
         { user: "Karinaa", password: "K4r1n4$" },
         { user: "Paulina", password: "P4ul1n4$" },
@@ -59,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function showNotification(message) {
         notification.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
         notification.classList.add('show');
-        
+
         setTimeout(() => {
             notification.classList.remove('show');
         }, 3000);
@@ -80,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function createConfetti() {
         const confettiCount = 20;
         const container = document.querySelector('.container');
-        
+
         for (let i = 0; i < confettiCount; i++) {
             const confetti = document.createElement('div');
             confetti.className = 'confetti';
@@ -88,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
             confetti.style.backgroundColor = getRandomColor();
             confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
             container.appendChild(confetti);
-            
+
             setTimeout(() => {
                 confetti.remove();
             }, 3000);
@@ -103,11 +104,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Generar filas de la tabla
     function generateTableRows(data) {
         tableBody.innerHTML = '';
-        
+
         for (let i = 0; i < data.length; i += 2) {
             const row = document.createElement('tr');
             row.style.animation = `fadeInUp 0.5s ease ${i * 0.05}s forwards`;
-            
+
             // Primera columna (usuario + contraseña)
             const user1 = data[i];
             const userCell1 = document.createElement('td');
@@ -120,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             `;
             row.appendChild(userCell1);
-            
+
             const passCell1 = document.createElement('td');
             passCell1.innerHTML = `
                 <div class="password-cell">
@@ -131,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             `;
             row.appendChild(passCell1);
-            
+
             // Segunda columna (si existe)
             if (i + 1 < data.length) {
                 const user2 = data[i + 1];
@@ -145,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     </div>
                 `;
                 row.appendChild(userCell2);
-                
+
                 const passCell2 = document.createElement('td');
                 passCell2.innerHTML = `
                     <div class="password-cell">
@@ -161,38 +162,38 @@ document.addEventListener('DOMContentLoaded', function() {
                 row.appendChild(document.createElement('td'));
                 row.appendChild(document.createElement('td'));
             }
-            
+
             tableBody.appendChild(row);
         }
-        
+
         // Configurar event listeners para botones de copiar
         setupCopyButtons();
     }
 
     function setupCopyButtons() {
         document.querySelectorAll('.copy-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 const textToCopy = this.getAttribute('data-text');
                 copyToClipboard(textToCopy);
-                
+
                 // Efecto visual
                 this.classList.add('copied');
                 this.innerHTML = '<i class="fas fa-check"></i>';
-                
+
                 setTimeout(() => {
                     this.classList.remove('copied');
                     this.innerHTML = '<i class="fas fa-copy"></i>';
                 }, 2000);
             });
-            
+
             // Efectos hover
-            btn.addEventListener('mouseenter', function() {
+            btn.addEventListener('mouseenter', function () {
                 if (!this.classList.contains('copied')) {
                     this.innerHTML = '<i class="fas fa-clipboard"></i>';
                 }
             });
-            
-            btn.addEventListener('mouseleave', function() {
+
+            btn.addEventListener('mouseleave', function () {
                 if (!this.classList.contains('copied')) {
                     this.innerHTML = '<i class="fas fa-copy"></i>';
                 }
@@ -203,23 +204,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función de búsqueda
     function searchUsers() {
         const searchTerm = searchInput.value.toLowerCase();
-        
+
         if (searchTerm === '') {
             generateTableRows(passwordData);
             return;
         }
-        
-        const filteredData = passwordData.filter(item => 
-            item.user.toLowerCase().includes(searchTerm) || 
+
+        const filteredData = passwordData.filter(item =>
+            item.user.toLowerCase().includes(searchTerm) ||
             item.password.toLowerCase().includes(searchTerm)
         );
-        
+
         generateTableRows(filteredData);
     }
 
     // Event listeners
     searchBtn.addEventListener('click', searchUsers);
-    searchInput.addEventListener('keyup', function(e) {
+    searchInput.addEventListener('keyup', function (e) {
         if (e.key === 'Enter') {
             searchUsers();
         }
