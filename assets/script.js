@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { user: "ditza", password: "Dana09$" },
         { user: "kevin", password: "Kevi09$" },
         { user: "ana", password: "An40925$" },
+        { user: "Karen", password: "K4ren09" },
     ];
 
     const tableBody = document.querySelector('#passwordTable tbody');
