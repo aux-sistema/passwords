@@ -64,7 +64,8 @@ document.addEventListener('DOMContentLoaded', function () {
         { user: "WhatsApp ", password: "Wh4ts4pp02" },
         { user: "Angel", password: "Ang3lLe0" },
         { user: "Sarahi", password: "Sarah1-56" },
-        { user: "Citlaly", password: "Citlaly85$" },
+        { user: "Citlalli", password: "Citlalli85$" },
+        { user: "Armando", password: "Armando85$" },
     ];
 
     const tableBody = document.querySelector('#passwordTable tbody');
@@ -72,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchBtn = document.getElementById('searchBtn');
     const notification = document.getElementById('notification');
 
-    // Función para mostrar notificación
+    // Función para mostrar notificación 
     function showNotification(message) {
         notification.innerHTML = `<i class="fas fa-check-circle"></i> ${message}`;
         notification.classList.add('show');
