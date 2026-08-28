@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { user: "Ian", password: "Ian-005" },
         { user: "Patricia", password: "Patrici4-43" },
         { user: "Lucero", password: "Lucer085$" },
+        { user: "Guadalupe", password: "Lupita$78" },
         
         
     ];
